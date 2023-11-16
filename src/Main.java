@@ -8,15 +8,20 @@ public class Main {
      * zip(myArray1, myArray2) → {1,3,5,7,9,2,4,6,8,10,12,14,16}
      */
     public static int[] combine(int[] array1, int[] array2) {
-        int[] combined = new int[array1.length + array2.length];
-        for(int i = 0; i<array1.length-1;i++){
-            combined[i] = array1[i];
-        }
-        for(int j = 0; j<array2.length; j++){
-            combined[j+array1.length] = array2[j];
-        }
-        return combined;
+            int length = array1.length + array2.length;
+            int[] result = new int[length];
 
+            int index = 0;
+
+            for (int i = 0; i < array1.length; i++) {
+                result[index++] = array1[i];
+            }
+
+            for (int i = 0; i < array2.length; i++) {
+                result[index++] = array2[i];
+            }
+
+            return result;
     }
 
     /**
